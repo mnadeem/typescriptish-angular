@@ -3,8 +3,6 @@
 module sample {
 	'use strict'
 
-	angular.module('smpl-typescriptish-angular.components.confirmation.controllers').controller('modalInstanceCtrl', ModalInstanceCtrl.prototype.injection());
-	
 	/**
 	 * @ngdoc controller
 	 * @module smpl-typescriptish-angular.components.confirmation.controllers
@@ -33,4 +31,5 @@ module sample {
 			};
         }
 	}
+	angular.module('smpl-typescriptish-angular.components.confirmation.controllers').controller('modalInstanceCtrl', ModalInstanceCtrl.prototype.injection());
 }

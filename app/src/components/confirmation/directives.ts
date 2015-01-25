@@ -18,6 +18,7 @@ module sample {
 	 */
 	export class NgReallyClick implements ng.IDirective {
 
+    	static $inject = ['$log', '$parse', '$modal'];
     	public injection($log:ng.ILogService, $parse : ng.IParseService, $modal:ng.ui.bootstrap.IModalService): Array<any> {
             return [
                 () => { 
@@ -39,40 +40,39 @@ module sample {
 			this.scope   = {ngReallyClick:"&"};        
 
         }
-		
 
         public link ($scope: ReallyClickModel, element: JQuery, attributes: NgReallyClickAttributes): void {
             element.bind('click', function() {
-			                 var message = attributes.ngReallyMessage || "Are you sure ?";
-	
-			                 var modalInstance = this.$modal.open({
-			                	 templateUrl: 'src/components/confirmation/confirmation.tpl.html',
-			                	 size: 'sm',
-			                	 resolve: {
-		                	        confirmationMessage: function () {
-		                	          return message;
-		                	        }
-		                	      },
-			                	 controller: 'modalInstanceCtrl'
-			                 });
-			                 $scope.$apply();
-			                 modalInstance.result.then(function(confirmed) {
-			                	 confirmed = confirmed || false;
-			                	 //$parse method, this allows parameters to be passed
-			                     var invoker = this.$parse(attributes.ngReallyClick);
-			                     $scope.ngReallyClick({confirmed:confirmed});
-			                 }, function() {
-			                	 this.$log.info('Confirmation Modal dismissed at: ' + new Date());
-			                	 //$parse method, this allows parameters to be passed
-			                     var invoker = this.$parse(attributes.ngReallyClick);
-			                     $scope.ngReallyClick({confirmed:false});
-			                 });
-	
-			               });
+                 var message = attributes.ngReallyMessage || "Are you sure ?";
+
+                 var modalInstance = this.$modal.open({
+                	 templateUrl: 'src/components/confirmation/confirmation.tpl.html',
+                	 size: 'sm',
+                	 resolve: {
+            	        confirmationMessage: function () {
+            	          return message;
+            	        }
+            	      },
+                	 controller: 'modalInstanceCtrl'
+                 });
+                 $scope.$apply();
+                 modalInstance.result.then(function(confirmed) {
+                	 confirmed = confirmed || false;
+                	 //$parse method, this allows parameters to be passed
+                     var invoker = this.$parse(attributes.ngReallyClick);
+                     $scope.ngReallyClick({confirmed:confirmed});
+                 }, function() {
+                	 this.$log.info('Confirmation Modal dismissed at: ' + new Date());
+                	 //$parse method, this allows parameters to be passed
+                     var invoker = this.$parse(attributes.ngReallyClick);
+                     $scope.ngReallyClick({confirmed:false});
+                 });
+
+               });
         }
 
 	}
-	
+
 	export interface NgReallyClickAttributes extends ng.IAttributes {
 			ngReallyMessage: string;
 			ngReallyClick : string;		

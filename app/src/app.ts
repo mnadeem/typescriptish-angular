@@ -12,8 +12,9 @@ module sample {
 	 *
 	 * Main module of the application.
 	 */
-	 angular
-	  .module('smpl-typescriptish-angular', [
+	 //var myapp: ng.IModule = angular.module('app', ['ngRoute'])
+
+	  angular.module('smpl-typescriptish-angular', [
 	    'ngAnimate',
 	    'ngCookies',
 	    'ngResource',

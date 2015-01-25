@@ -3,6 +3,13 @@ module.exports = {
     files: ['bower.json'],
     tasks: ['wiredep']
   },
+  ts: {
+	    files: '<%= appConfig.paths.app %>/src/**/*.ts',
+	    tasks: ['ts:dev'],
+	    options: {
+	      livereload: '<%= appConfig.ports.livereload %>'
+	    }
+	  },
   htmlTmpl: {
     files: '<%= appConfig.paths.app %>/src/**/*.tpl.html',
     tasks: ['html2js'],

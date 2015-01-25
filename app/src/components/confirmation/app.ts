@@ -7,7 +7,7 @@ module sample {
 	 * @ngdoc module
 	 * @name smpl-typescriptish-angular.components.confirmation.directives
 	 * @description
-	 * # smpl-typescriptish-angular.components.confirmation.directives
+	 *  smpl-typescriptish-angular.components.confirmation.directives
 	 *
 	 * smpl-typescriptish-angular.components.confirmation.directives module of the application.
 	 */
@@ -18,7 +18,7 @@ module sample {
 	  * @ngdoc module
 	  * @name smpl-typescriptish-angular.components.confirmation.controllers
 	  * @description
-	  * # smpl-typescriptish-angular.components.confirmation.controllers
+	  * smpl-typescriptish-angular.components.confirmation.controllers
 	  *
 	  * smpl-typescriptish-angular.components.confirmation.controllers module of the application.
 	  */
@@ -38,5 +38,4 @@ module sample {
 		'smpl-typescriptish-angular.components.confirmation.directives',
 		'smpl-typescriptish-angular.components.confirmation.controllers'
 		]);
-
 }

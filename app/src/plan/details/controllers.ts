@@ -2,8 +2,6 @@
 
 module sample { 
 
-	angular.module('smpl-typescriptish-angular.plan.details.controllers').controller('planDetailsCtr', PlanDetailsCtr.prototype.injection());
-	
 	/**
 	 * @ngdoc controller
 	 * @module smpl-typescriptish-angular.plan.details.controllers
@@ -24,4 +22,6 @@ module sample {
 
         }
 	}
+	
+	angular.module('smpl-typescriptish-angular.plan.details.controllers').controller('planDetailsCtr', sample.PlanDetailsCtr);
 }
