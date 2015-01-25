@@ -23,7 +23,7 @@ module sample {
 	  * smpl-typescriptish-angular.components.confirmation.controllers module of the application.
 	  */
 	  angular
-	 	.module('smpl-typescriptish-angular.components.confirmation.controllers',[]);
+	 	.module('smpl-typescriptish-angular.components.confirmation.controllers',['ui.bootstrap']);
 	 
 	 /**
 	 * @ngdoc module

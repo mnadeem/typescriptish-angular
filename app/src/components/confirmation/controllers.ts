@@ -12,12 +12,9 @@ module sample {
 	 * Controller to manage the modal instance
 	 */
 	export class ModalInstanceCtrl {
+		
+		static $inject = ['$scope', '$modalInstance', 'confirmationMessage'];
 
-		public injection(): Array<any> {
-            return [
-                ModalInstanceCtrl
-            ]
-        }
 
         constructor($scope: ModalInstanceModel, $modalInstance:ng.ui.bootstrap.IModalServiceInstance, confirmationMessage:string) {
 			
@@ -31,5 +28,5 @@ module sample {
 			};
         }
 	}
-	angular.module('smpl-typescriptish-angular.components.confirmation.controllers').controller('modalInstanceCtrl', ModalInstanceCtrl.prototype.injection());
+	angular.module('smpl-typescriptish-angular.components.confirmation.controllers').controller('modalInstanceCtrl', ModalInstanceCtrl);
 }
