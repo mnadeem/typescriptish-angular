@@ -22,7 +22,8 @@ module sample {
 	    'ngSanitize',
 		'app-templates',
 		'ui.bootstrap',
-		'smpl-typescriptish-angular.plan'
+		'smpl-typescriptish-angular.plan',
+		'smpl-typescriptish-angular.components'
 	  ]);
 }
 
