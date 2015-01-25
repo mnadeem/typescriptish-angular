@@ -1,2 +1,4 @@
 # typescriptish-angular
-Typescript AngularJs examples
+Typescript AngularJs With Grunt
+
+
