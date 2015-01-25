@@ -3,9 +3,6 @@
 module sample {
 	'use strict'
 
-	angular.module('smpl-typescriptish-angular.components.confirmation.directives')
-		.directive('ngReallyClick', NgReallyClick);
-
 	/**
 	 * @ngdoc directive
 	 * @module smpl-typescriptish-angular.components.confirmation.directives
@@ -19,10 +16,15 @@ module sample {
 	export class NgReallyClick implements ng.IDirective {
 
     	static $inject = ['$log', '$parse', '$modal'];
-    	public injection($log:ng.ILogService, $parse : ng.IParseService, $modal:ng.ui.bootstrap.IModalService): Array<any> {
+    	public injection(): Array<any> {
+            var directive = ($log:ng.ILogService, $parse : ng.IParseService, $modal:ng.ui.bootstrap.IModalService) =>
+	        {
+	            return new NgReallyClick($log,$parse, $modal);
+	        };
+
             return [
                 () => { 
-                    return new NgReallyClick($log, $parse, $modal) ;
+                    return directive;
                 }
             ]
         }
@@ -77,4 +79,7 @@ module sample {
 			ngReallyMessage: string;
 			ngReallyClick : string;		
 	}
+
+	angular.module('smpl-typescriptish-angular.components.confirmation.directives')
+		.directive('ngReallyClick', NgReallyClick.prototype.injection());
 }
