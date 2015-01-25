@@ -39,11 +39,14 @@ module sample {
         constructor($log:ng.ILogService, $parse : ng.IParseService, $modal:ng.ui.bootstrap.IModalService) {
             this.templateUrl = 'partials/templates/directive.html'
             this.restrict = 'A'
-			this.scope   = {ngReallyClick:"&"};        
+			this.scope   = {ngReallyClick:"&"};    
+			this.$log  = $log;
+			this.$parse =  $parse;
+			this.$modal =   $modal;
 
         }
 
-        public link ($scope: ReallyClickModel, element: JQuery, attributes: NgReallyClickAttributes): void {
+        public link (scope: ReallyClickModel, element: JQuery, attributes: NgReallyClickAttributes): void {
             element.bind('click', function() {
                  var message = attributes.ngReallyMessage || "Are you sure ?";
 
@@ -57,17 +60,17 @@ module sample {
             	      },
                 	 controller: 'modalInstanceCtrl'
                  });
-                 $scope.$apply();
+                 scope.$apply();
                  modalInstance.result.then(function(confirmed) {
                 	 confirmed = confirmed || false;
                 	 //$parse method, this allows parameters to be passed
                      var invoker = this.$parse(attributes.ngReallyClick);
-                     $scope.ngReallyClick({confirmed:confirmed});
+                     scope.ngReallyClick({confirmed:confirmed});
                  }, function() {
                 	 this.$log.info('Confirmation Modal dismissed at: ' + new Date());
                 	 //$parse method, this allows parameters to be passed
                      var invoker = this.$parse(attributes.ngReallyClick);
-                     $scope.ngReallyClick({confirmed:false});
+                     scope.ngReallyClick({confirmed:false});
                  });
 
                });
