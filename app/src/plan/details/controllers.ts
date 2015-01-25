@@ -12,16 +12,13 @@ module sample {
 	 * Controller to manage the plan details
 	 */
 	export class PlanDetailsCtr {
-		public injection(): Array<any> {
-            return [
-                PlanDetailsCtr
-            ]
-        }
+
+		static $inject = ['$scope', '$log', '$timeout'];
 
         constructor($scope: PlanDetailsModel, $log: ng.ILogService, $timeout:ng.ITimeoutService) {
 
         }
 	}
 	
-	angular.module('smpl-typescriptish-angular.plan.details.controllers').controller('planDetailsCtr', sample.PlanDetailsCtr);
+	angular.module('smpl-typescriptish-angular.plan.details.controllers').controller('planDetailsCtr', PlanDetailsCtr);
 }
