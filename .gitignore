@@ -9,3 +9,4 @@ app/src/*.js
 .tmp
 reports
 .tscache
+test/**/*.js

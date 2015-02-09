@@ -1,5 +1,6 @@
 serve:
   - 'clean:server'
+  - 'ts:dev'
   - 'concurrent:server'
   - 'autoprefixer'
   - 'ts:dev'
@@ -10,7 +11,7 @@ serve:
 test:
   - 'clean:reports'
   - 'clean:server'
-  - 'ts:dev'
+  - 'ts'
   - 'concurrent:test'
   - 'autoprefixer'
   - 'connect:test'
@@ -18,6 +19,7 @@ test:
 build:
   - 'clean:dist'
   - 'useminPrepare'
+  - 'ts:dev'
   - 'concurrent:dist'
   - 'autoprefixer'
   - 'ts:dev'
