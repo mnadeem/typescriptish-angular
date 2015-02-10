@@ -9,6 +9,5 @@ module.exports = {
     }]
   },
   server: '<%= appConfig.paths.temp %>',
-  samba: '<%= appConfig.paths.samba %>',
   reports: '<%= buildConfig.paths.reports %>/{,*/}*'
 };

@@ -1,18 +1,26 @@
 /// <reference path='../../includes.ts' />
+/// <reference path='../../../../app/src/components/confirmation/controllers.ts' />
 
 'use strict';
 
 describe('Controller:modalInstanceCtrl',  () => {
-	
-	var counter;
-	
+
+	var targetBeingTested;
+
 	beforeEach(() => {
-		counter = 0;
+
+		module('smpl-typescriptish-angular.components.confirmation.controllers');
+
+		inject(function ($rootScope, $controller) {
+
+			targetBeingTested = $controller('modalInstanceCtrl', {
+                $scope: $rootScope.$new()
+            });
+		});
+		
 	});
 
-
-	it('increments value', () => {
-		counter ++;
-		expect(counter).toBe(1);
-	});
+ 	it('Sampl test', () => {
+        expect(true).toBe(true);
+    });
 });

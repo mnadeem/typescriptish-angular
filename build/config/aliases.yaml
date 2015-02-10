@@ -12,6 +12,7 @@ test:
   - 'clean:reports'
   - 'clean:server'
   - 'ts'
+  - 'html2js'
   - 'concurrent:test'
   - 'autoprefixer'
   - 'connect:test'
@@ -33,10 +34,7 @@ build:
   - 'usemin'
   - 'htmlmin'
 default:
-  - 'newer:jshint'
   - 'test'
   - 'build'
 ci:
   - 'test'
-  - 'jscpd'
-  - 'plato'

@@ -18,15 +18,19 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'vendor/jquery/dist/jquery.js',
       'vendor/angular/angular.js',
       'vendor/angular-mocks/angular-mocks.js',
       'vendor/angular-animate/angular-animate.js',
       'vendor/angular-cookies/angular-cookies.js',
       'vendor/angular-resource/angular-resource.js',
-      'vendor/angular-route/angular-route.js',
       'vendor/angular-sanitize/angular-sanitize.js',
+      'vendor/angular-route/angular-route.js',
+      'vendor/angular-ui-router/release/angular-ui-router.js',
+      'vendor/bootstrap/dist/js/bootstrap.js',
+      'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
       'app/src/**/*.js',
-      'test/mock/**/*.js',
+      '.tmp/generated/scripts/templates.js',
       'test/spec/**/*.js'
     ],
 
